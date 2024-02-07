@@ -93,3 +93,10 @@ print(list(cats_by_name))
 first_2 = Cat.select().order_by(Cat.name).limit(2)
 print(list(first_2))
 
+# delete
+
+# Cat.delete().execute()  # caution! this deletes everything
+# print(list(Cat.select()))
+
+rows_deleted = Cat.delete().where(Cat.name == 'Stella').execute()
+print(rows_deleted, list(Cat.select()))

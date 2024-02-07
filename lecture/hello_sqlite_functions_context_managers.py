@@ -28,6 +28,7 @@ def display_all_data():
 def display_one_product(product_name):
     conn = sqlite3.connect(db)
     results = conn.execute('SELECT * FROM products WHERE name like ?', (product_name,))
+
     first_row = results.fetchone()
 
     if first_row:
